@@ -1,0 +1,387 @@
+
+body {
+    margin: 0;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+.blue {
+    color: #2762C1;
+}
+
+.green {
+    color: #41be80;
+}
+
+.nav-links {
+    margin:0 10px;
+    color: #0d2040;
+}
+
+.nav-links:hover {
+    color: #2762C1;
+}
+
+/* Navigation and Hero Section */
+
+.hero-section {
+    background: hsl(217, 66%, 98%);
+    height: 100vh;
+}
+
+.navbar{
+    padding: 20px 25px;
+    background: hsl(217, 66%, 98%);
+    transition: .3s ease-in-out;
+    /* box-shadow: 0px 3px 7px rgba(218, 218, 218, 0.6); */
+}
+
+.logo {
+    font-weight: 600;
+    color: #112b55;
+}
+
+.log-in-link {
+    font-weight: 600;
+    color: #112b55;
+}
+
+.get-started-btn {
+    background-color: #2762C1;
+    padding: 10px 30px;
+    margin-left: 10px;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+}
+
+.hero-container {
+    margin-top: 4%;
+}
+
+.hero-header {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #112b55;
+    line-height: 1.4;
+}
+
+.hero-subheading {
+    margin-top: 20px;
+    font-size: 1rem;
+    max-width: 530px;
+    line-height: 1.6;
+    color: #3e506f;
+}
+
+.btn-container {
+    margin-top: 30px;
+}
+
+.primary-btn {
+    background-color: #2762C1;
+    padding: 12px 40px;
+    margin-right: 10px;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+}
+
+.secondary-btn {
+    background-color: hsl(217, 66%, 90%);
+    padding: 12px 40px;
+    border-radius: 6px;
+    border: none;
+    color: #2762C1;
+}
+
+.hero-img {
+    width: 90%;
+    margin-top: -40px;
+    margin-left: 20px;
+}
+
+section {
+    padding: 70px 60px;
+    margin-top: 40px;
+}
+
+/* Welcome Section */
+
+.welcome-subheading {
+    font-weight: 600;
+    color: #2762C1;
+}
+
+.welcome-header {
+    font-weight: 700;
+    font-size: 2rem;
+    color: #112b55;
+    line-height: 1.4;
+}
+
+.welcome-text {
+    margin-top: 30px;
+    line-height: 1.6;
+    color: #3e506f;
+    margin-bottom: 40px;
+}
+
+.welcome-img {
+    width: 90%;
+    margin-top: -40px;
+    margin-left: 20px;
+}
+
+/* Reasons Section */
+
+.features-header {
+    color: #112b55;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 7%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.reasons-row {
+    margin-bottom: 8%;
+}
+
+.reasons-col {
+    margin-top: 10%;
+}
+
+.reasons-subheading {
+    font-weight: 600;
+    color: #0d2040;
+}
+
+.reasons-text {
+    line-height: 1.9;
+    color: #3e506f;
+    margin-top: 5%;
+    margin-bottom: 30px;
+}
+
+/* Contact Us Section */
+
+.contact-section {
+    margin-top: -10%;
+}
+
+.form-container {
+    border: none;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: rgba(45, 31, 122, 0.15) 0px 48px 100px 0px;
+}
+
+.input:focus {
+    box-shadow: none;
+    border: 3px solid hsl(217, 66%, 80%)
+}
+
+.contact-btn {
+    background-color: #2762C1;
+    padding: 12px 40px;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+}
+
+/* Footer */
+
+.footer {
+    padding: 70px 60px;
+}
+
+.logo-dark {
+    font-weight: 700;
+    color: #112b55;
+}
+
+.footer-text {
+    color: #3e506f;
+    max-width: 340px;
+    margin-top: 3%;
+}
+
+.footer-subheader{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #112b55;
+}
+
+.footer-link {
+    margin-top: 10%;
+    color: #495e83;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+/* Coming Soon Page */
+
+.coming-soon-section {
+    margin: 0;
+    text-align: center;
+    background: hsl(217, 66%, 98%);
+    height: 100vh;
+}
+
+.coming-soon-header {
+    margin-top: 5%;
+    line-height: 2;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #112b55;
+}
+
+.back {
+    text-decoration: none;
+    background-color: #fff;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(45, 31, 122, 0.15) 0px 48px 100px 0px;
+}
+
+.back-link {
+    text-align: left;
+}
+
+.beta-container {
+    text-align: left;
+    border: none;
+    border-radius: 10px;
+    padding: 40px;
+    margin: 5% auto;
+    width: 60%;
+    box-shadow: rgba(45, 31, 122, 0.15) 0px 48px 100px 0px;
+}
+
+/* Responsive */
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+    /* Navigation and Hero Section */
+
+    .hero-section {
+        padding-left: 10px;
+        padding-right: 10px;
+        height: 100%;
+    }
+
+    .logo {
+        margin-left: -8%;
+    }
+
+    .menu {
+        margin-right: -8%;
+    }
+
+    .links {
+        text-align: center;
+    }
+
+    .hero-header {
+        font-size: 2.3rem;
+        text-align: left;
+    }
+
+    .primary-btn, .secondary-btn {
+        display: block;
+        padding: 15px 0px;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .hero-img {
+        margin-top:8%;
+        width: 80%;
+    }
+
+    section {
+        padding: 70px 20px;
+        margin-top: 0;
+    }
+
+    /* Welcome Section */
+
+    .welcome-subheading,
+    .welcome-header,
+    .welcome-text {
+        text-align: left;
+    }
+
+    .welcome-header {
+        font-size: 1.9rem;
+    }
+
+    .welcome-text {
+        font-size: 1rem;
+    }
+
+    .welcome-img {
+        margin-top: 8%;
+        width: 90%;
+    }
+
+    /* Reasons-section */
+
+    .features-header {
+        font-size: 1.7rem;
+    }
+
+    .reasons-subheading {
+        font-size: 1.9rem;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    /* Footer */
+
+    .footer {
+        padding: 70px 30px;
+    }
+
+    .logo-dark {
+        font-size: 2rem;
+        line-height: 2;
+    }
+
+    .footer-text {
+        line-height: 1.6;
+    }
+
+    .footer-subheader {
+        margin-top: 15%;
+    }
+
+    .footer-link {
+        margin-top: 8%;
+        color: #495e83;
+    }
+
+    /* Coming Soon page */
+
+    .coming-soon-section {
+        height: 100%;
+    }
+
+    .coming-soon-header {
+        margin-top: 20%;
+        font-size: 1.9rem;
+        line-height: 1.5;
+    }
+
+    .beta-container {
+        width: 100%;
+    }
+
+  }
