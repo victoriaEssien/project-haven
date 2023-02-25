@@ -16,7 +16,7 @@ function WelcomeSection() {
                 <br /> <br />
                 With the ability to filter by topic, course and difficulty, you can easily find the project that is best suited for you. With Project Haven, searching for topics no longer have to be a tedious task &#128524;</p>
                 <Link to="/coming">
-                  <Button className="primary-btn">Get Started</Button>
+                  <Button className="primary-btn navigation-link">Get Started</Button>
                 </Link>
             </Col>
 

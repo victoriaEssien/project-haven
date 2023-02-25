@@ -48,11 +48,11 @@ body {
 .log-in-link {
     font-weight: 600;
     color: #112b55;
+    text-decoration: none;
 }
 
 .get-started-btn {
     background-color: #2762C1;
-    text-decoration: none;
     padding: 10px 30px;
     margin-left: 10px;
     border-radius: 6px;
@@ -390,6 +390,7 @@ section {
 
     .beta-container {
         width: 100%;
+        padding: 15px;
     }
 
   }

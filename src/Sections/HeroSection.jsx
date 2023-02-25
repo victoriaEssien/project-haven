@@ -17,7 +17,7 @@ function HeroSection() {
                     <h1 className="hero-header">Hundreds of <span className="blue">project topics</span> at <span className="green">your fingertips!</span></h1>
                     <p className="hero-subheading">We made it easier to find project topics by creating a single library that contains all of those subjects.</p>
                     <div className="btn-container">
-                        <Link to="/coming">
+                        <Link to="/coming" className='navigation-link'>
                         <Button className="primary-btn">Get Started</Button>
                         </Link>
                         <Link to="/coming" className='navigation-link'>
