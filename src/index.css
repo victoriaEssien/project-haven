@@ -22,6 +22,10 @@ body {
     color: #2762C1;
 }
 
+.navigation-link {
+    text-decoration: none;
+}
+
 /* Navigation and Hero Section */
 
 .hero-section {
@@ -48,6 +52,7 @@ body {
 
 .get-started-btn {
     background-color: #2762C1;
+    text-decoration: none;
     padding: 10px 30px;
     margin-left: 10px;
     border-radius: 6px;
@@ -80,6 +85,7 @@ body {
 
 .primary-btn {
     background-color: #2762C1;
+    text-decoration: none;
     padding: 12px 40px;
     margin-right: 10px;
     border-radius: 6px;
@@ -89,6 +95,7 @@ body {
 
 .secondary-btn {
     background-color: hsl(217, 66%, 90%);
+    text-decoration: none;
     padding: 12px 40px;
     border-radius: 6px;
     border: none;
@@ -185,6 +192,7 @@ section {
 
 .contact-btn {
     background-color: #2762C1;
+    text-decoration: none;
     padding: 12px 40px;
     border-radius: 6px;
     border: none;

@@ -20,7 +20,7 @@ function HeroSection() {
                         <Link to="/coming">
                         <Button className="primary-btn">Get Started</Button>
                         </Link>
-                        <Link to="/coming">
+                        <Link to="/coming" className='navigation-link'>
                         <Button className="secondary-btn">Log in</Button>
                         </Link>
                     </div>
