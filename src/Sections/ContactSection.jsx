@@ -43,7 +43,7 @@ function ContactSection() {
                 
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                   <Form.Label>Subject</Form.Label>
-                  <Form.Control className="input" type="text" name="subject" size="lg" placeholder="Woah" required/>
+                  <Form.Control className="input" type="text" name="subject" size="lg" placeholder="Just saying hi" required/>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
