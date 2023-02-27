@@ -1,32 +1,26 @@
 
-import { useRef, useState } from "react";
-import emailjs from 'emailjs-com';
+import { useRef } from "react"
+import emailjs from 'emailjs-com'
 import { Link } from "react-router-dom"
 import Form from "react-bootstrap/Form"
-import Button from "react-bootstrap/Button"
+import SendButton from "../Components/SendButton"
 
 function ComingSoon() {
 
   const form = useRef();
-  const [loading, setLoading] = useState(false);
 
-  const sendEmail = (e) => {
-    setLoading(true);
+  const sendEmail = async (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_qk2039q', 'template_psc0d2v', form.current, 'Z9ZKs_j2kVSWTOYDg')
+    await emailjs.sendForm('service_qk2039q', 'template_psc0d2v', form.current, 'Z9ZKs_j2kVSWTOYDg')
       .then((result) => {
         console.log(result.text);
         alert("Thanks for showing interest! We will get back to you shortly")
-        e.target.reset();
+        form.current.reset();
       }, (error) => {
         console.log(error.text);
         alert("An error occurred, Please try again")
       });
-
-      setTimeout(() => {
-        setLoading(false);
-      },3000);
   };
 
   return (
@@ -38,13 +32,13 @@ function ComingSoon() {
       <p>Enter your email below if you'd like to be one of our first test users!</p>
       
       <div className="beta-container">
-        <Form ref={form} onSubmit={sendEmail}>
+        <Form ref={form}>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Email Address</Form.Label>
             <Form.Control className="input" type="email" name="email" size="lg" placeholder="name@example.com" required/>
           </Form.Group>
           <div className="d-grid">
-            <Button type="submit" className="contact-btn">Send Message</Button>
+            <SendButton onClick={sendEmail} className="contact-btn">Submit</SendButton>
           </div>
         </Form>
       </div>

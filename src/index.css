@@ -271,6 +271,30 @@ section {
     box-shadow: rgba(45, 31, 122, 0.15) 0px 48px 100px 0px;
 }
 
+
+@keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+  
+  .contact-btn #loading {
+    color: white;
+    animation: spinner 1s cubic-bezier(0.6, 0, 0.4, 1) infinite;
+  }
+  
+  .contact-btn .loading__circle--one {
+    opacity: 25%;
+  }
+  .contact-btn .loading__circle--two {
+    opacity: 75%;
+  }
+
+
+
 /* Responsive */
 
 @media (min-width: 320px) and (max-width: 480px) {
