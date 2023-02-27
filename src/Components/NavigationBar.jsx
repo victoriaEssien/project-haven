@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
+import { NavLink } from 'react-router-dom';
 
 function NavigationBar() {
 
@@ -20,7 +21,9 @@ function NavigationBar() {
             <Nav.Link href="#contact" className='nav-links'>Contact</Nav.Link>
           </Nav>
           <Nav className='ms-auto links'>
-          <Nav.Link href='/coming' className='log-in-link'>Log in</Nav.Link>
+          <Nav.Link>
+            <NavLink to='/coming' className='log-in-link'>Log in</NavLink>
+          </Nav.Link>
           <Link to="/coming">
           <Button className='get-started-btn'>Get Started</Button>
           </Link>
