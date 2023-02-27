@@ -1,5 +1,5 @@
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from 'emailjs-com';
 import { Link } from "react-router-dom"
 import Form from "react-bootstrap/Form"
@@ -8,8 +8,10 @@ import Button from "react-bootstrap/Button"
 function ComingSoon() {
 
   const form = useRef();
+  const [loading, setLoading] = useState(false);
 
   const sendEmail = (e) => {
+    setLoading(true);
     e.preventDefault();
 
     emailjs.sendForm('service_qk2039q', 'template_psc0d2v', form.current, 'Z9ZKs_j2kVSWTOYDg')
@@ -21,6 +23,10 @@ function ComingSoon() {
         console.log(error.text);
         alert("An error occurred, Please try again")
       });
+
+      setTimeout(() => {
+        setLoading(false);
+      },3000);
   };
 
   return (
