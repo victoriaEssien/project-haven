@@ -9,6 +9,7 @@ const SendButton = (props) => {
     <Button
       disabled={loading}
       className="contact-btn"
+      type="submit"
       onClick={async (e) => {
         if (props.onClick) {
           const onClickIsPromise =

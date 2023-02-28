@@ -14,7 +14,13 @@ function ContactSection() {
   const sendEmail = async (e) => {
     e.preventDefault();
 
-    await emailjs.sendForm('service_qk2039q', 'template_cwic9u4', form.current, 'Z9ZKs_j2kVSWTOYDg')
+    if (document.getElementById("exampleForm.ControlInput1").value === "" ||
+    document.getElementById("exampleForm.ControlInput2").value === "" ||
+    document.getElementById("exampleForm.ControlTextarea1").value === "") {
+  alert("Please fill in all fields before submitting")
+} else {
+
+  await emailjs.sendForm('service_qk2039q', 'template_cwic9u4', form.current, 'Z9ZKs_j2kVSWTOYDg')
       .then((result) => {
         console.log(result.text);
         alert("Message Sent, We will get back to you shortly")
@@ -23,6 +29,10 @@ function ContactSection() {
         console.log(error.text);
         alert("An error occurred, Please try again")
       });
+
+}
+
+    
   };
 
   return (
@@ -41,14 +51,14 @@ function ContactSection() {
                   <Form.Control className="input" type="email" name="email" size="lg" placeholder="name@example.com" required/>
                 </Form.Group>
                 
-                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
                   <Form.Label>Subject</Form.Label>
                   <Form.Control className="input" type="text" name="subject" size="lg" placeholder="Just saying hi" required/>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                   <Form.Label>Your Message</Form.Label>
-                  <Form.Control className="input" as="textarea" name="message" rows={3} placeholder="Woah, I can't wait to use this!" required/>
+                  <Form.Control className="input" as="textarea" name="message" rows={3} placeholder="I can't wait to use this!" required/>
                 </Form.Group>
                 <div className="d-grid">
                   <SendButton onClick={sendEmail} className="contact-btn">Submit</SendButton>

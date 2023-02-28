@@ -12,7 +12,11 @@ function ComingSoon() {
   const sendEmail = async (e) => {
     e.preventDefault();
 
-    await emailjs.sendForm('service_qk2039q', 'template_psc0d2v', form.current, 'Z9ZKs_j2kVSWTOYDg')
+    if(!form.current.elements.email.value) {
+      alert("Please enter your email address")
+      return;
+    } else {
+      await emailjs.sendForm('service_qk2039q', 'template_psc0d2v', form.current, 'Z9ZKs_j2kVSWTOYDg')
       .then((result) => {
         console.log(result.text);
         alert("Thanks for showing interest! We will get back to you shortly")
@@ -21,6 +25,8 @@ function ComingSoon() {
         console.log(error.text);
         alert("An error occurred, Please try again")
       });
+    }
+
   };
 
   return (
