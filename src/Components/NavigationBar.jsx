@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button';
 function NavigationBar() {
 
   return (
-    <Navbar expand="lg" className="navbar">
+    <Navbar expand="lg" className="navigation-bar">
       <Container>
         <Navbar.Brand href="#home" className='logo'>Project Haven</Navbar.Brand>
         <Navbar.Toggle className='menu' aria-controls="basic-navbar-nav" />
@@ -20,8 +20,8 @@ function NavigationBar() {
             <Nav.Link href="#contact" className='nav-links'>Contact</Nav.Link>
           </Nav>
           <Nav className='ms-auto links'>
-          <Nav.Link as={Link} to="/coming" className='log-in-link'>Log in</Nav.Link>
-          <Link to="/coming">
+          <Nav.Link as={Link} to="/login" className='log-in-link'>Log in</Nav.Link>
+          <Link to="/register">
           <Button className='get-started-btn'>Get Started</Button>
           </Link>
           </Nav>

@@ -44,7 +44,7 @@ function ComingSoon() {
             <Form.Control className="input" type="email" name="email" size="lg" placeholder="name@example.com" required/>
           </Form.Group>
           <div className="d-grid">
-            <SendButton onClick={sendEmail} className="contact-btn">Submit</SendButton>
+            <SendButton onClick={sendEmail}>Submit</SendButton>
           </div>
         </Form>
       </div>

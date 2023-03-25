@@ -61,7 +61,7 @@ function ContactSection() {
                   <Form.Control className="input" as="textarea" name="message" rows={3} placeholder="I can't wait to use this!" required/>
                 </Form.Group>
                 <div className="d-grid">
-                  <SendButton onClick={sendEmail} className="contact-btn">Submit</SendButton>
+                  <SendButton onClick={sendEmail}>Submit</SendButton>
                 </div>
               </Form>
             </div>

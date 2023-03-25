@@ -15,7 +15,7 @@ function WelcomeSection() {
                 <p className="welcome-text">Project Haven is a web based platform designed to help students find and explore project topics easily. Our library houses an array of project topics from different fields in tech, making it easy to find the perfect project for you.
                 <br /> <br />
                 With the ability to filter by topic, course and difficulty, you can easily find the project that is best suited for you. With Project Haven, searching for topics no longer have to be a tedious task &#128524;</p>
-                <Link to="/coming" className='navigation-link'>
+                <Link to="/register" className='navigation-link'>
                   <Button className="primary-btn">Get Started</Button>
                 </Link>
             </Col>

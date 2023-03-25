@@ -33,7 +33,7 @@ body {
     height: 100vh;
 }
 
-.navbar{
+.navigation-bar{
     padding: 20px 25px;
     background: hsl(217, 66%, 98%);
     transition: .3s ease-in-out;
@@ -294,6 +294,107 @@ section {
   }
 
 
+/* Auth Forms */
+
+.auth-form-container {
+    border: none;
+    border-radius: 10px;
+    padding: 40px;
+    margin: 5% auto;
+    width: 50%;
+    box-shadow: rgba(45, 31, 122, 0.15) 0px 48px 100px 0px;
+}
+
+/* Main Navigation bar */
+
+.nav-bar{
+    padding: 20px 25px;
+    background: #fff;
+    box-shadow: rgba(45, 31, 122, 0.15) 0px 2px 40px 0px;
+}
+
+
+/* Dashboard */
+
+/* .dash-body-whole {
+    
+} */
+
+.dashboard {
+    margin: 3% 6%;
+}
+
+
+.user-name {
+    color: hsl(218, 28%, 55%);
+    margin-bottom: 0;
+}
+
+.dash-header {
+    font-weight: 600;
+    color: #0d2040;
+    margin-bottom: 8%;
+}
+
+.topics-body {
+    padding: 0;
+    margin-bottom: 8%;
+}
+
+.dash-headings {
+    display: flex;
+    justify-content: space-between;
+}
+
+.recent {
+    font-size: 1.4rem;
+    margin-left: 1%;
+    margin-bottom: 3%;
+}
+
+.topics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 40px;
+}
+
+.topic-card {
+    background-color: #fff;
+    margin: 2%;
+    width: 100%;
+    padding: 5% 10%;
+    border-radius: 10px;
+    box-shadow: rgba(45, 31, 122, 0.15) 0px 2px 40px 0px;
+}
+
+.topic-category {
+    font-size: 1rem;
+    margin-bottom: 0;
+    line-height: 2;
+}
+
+.topic-title {
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 4%;
+}
+
+.topic-desc {
+    width: 100%;
+    color: #3e506f;
+}
+
+.div-link {
+    text-decoration: none;
+    color: #0d2040;
+}
+
+.div-link:hover {
+    color: #3e506f;
+}
+
+
+
 
 /* Responsive */
 
@@ -416,5 +517,43 @@ section {
         width: 100%;
         padding: 40px 15px;
     }
+
+    /* Auth Forms */
+
+    .auth-form-container {
+        border: none;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 5% auto;
+        width: 100vw;
+        height: 100vh;
+        box-shadow: rgba(45, 31, 122, 0.15) 0px 48px 100px 0px;
+    }
+
+    /* Dashboard */
+
+    .dashboard {
+        margin: 10% 6%;
+    }
+
+    .user-name {
+        margin-bottom: 1%;
+    }
+
+    .recent {
+        font-size: 1.4rem;
+        margin: 12% 2% 5%;
+    }
+
+    .topics-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .topic-desc {
+        font-size: 0.9rem;
+    }
+
 
   }
