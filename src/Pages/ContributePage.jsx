@@ -20,7 +20,7 @@ function ContributePage() {
 
     
     useEffect(() => {
-      if (description.length > 0 && description.split(' ').length >= 100) {
+      if (description.length > 0 && description.split(' ').length >= 50) {
         setWordCount(description.split(' ').length);
       }
     }, [description]);

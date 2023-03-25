@@ -41,9 +41,8 @@ function SearchPage() {
         <Form.Control type="text" className="input" value={query} onChange={handleChange} placeholder="Search..."/>
         <section>
           {topics && (
-            <div>
-            {/* order by buttons */}
-              <div>
+            <div className="topics">
+              <div className="topics-grid">
                 {topics.map(topic => (
                   <TopicCard key={topic.id} topic={topic}/>
                 ))}
