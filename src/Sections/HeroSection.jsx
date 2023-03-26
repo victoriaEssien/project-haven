@@ -27,7 +27,7 @@ function HeroSection() {
                 </Col>
 
                 <Col md={6}>
-                    <img src={HeroImg} alt="" className="hero-img"/>
+                    <img src={HeroImg} alt="A photo of a mini library coming out of a phone" className="hero-img"/>
                 </Col>
             </Row>
         </Container>

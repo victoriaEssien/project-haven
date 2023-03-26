@@ -14,14 +14,14 @@ function WelcomeSection() {
                 <h3 className="welcome-header">We are one of the leading open source project libraries in Nigeria</h3>
                 <p className="welcome-text">Project Haven is a web based platform designed to help students find and explore project topics easily. Our library houses an array of project topics from different fields in tech, making it easy to find the perfect project for you.
                 <br /> <br />
-                With the ability to filter by topic, course and difficulty, you can easily find the project that is best suited for you. With Project Haven, searching for topics no longer have to be a tedious task &#128524;</p>
+                With the ability to search by title, filter by category and difficulty, you can easily find the project that is best suited for you. With Project Haven, searching for topics no longer have to be a tedious task &#128524;</p>
                 <Link to="/register" className='navigation-link'>
                   <Button className="primary-btn">Get Started</Button>
                 </Link>
             </Col>
 
             <Col md={6}>
-                    <img src={WelcomeImg} alt="" className="welcome-img"/>
+                    <img src={WelcomeImg} alt="The project haven dashboard screen" className="welcome-img"/>
             </Col>
         </Row>
     </section>

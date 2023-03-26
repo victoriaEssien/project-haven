@@ -1,5 +1,4 @@
 
-
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
 import { useEffect, useState } from "react"
 import { HeroSection, WelcomeSection, ReasonsSection, ContactSection, FooterSection, SignUpPage, LoginPage, HomePage, SearchPage, ContributePage, DetailsPage, AllTopics } from './index'
