@@ -92,7 +92,7 @@ function ContributePage() {
                   <SendButton>Submit</SendButton>
                 </div>
 
-              {formError && <p>{formError}</p>}
+              {formError && <p className="error">{formError}</p>}
           </Form>
       </div>
     </div>

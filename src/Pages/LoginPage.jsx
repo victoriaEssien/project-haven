@@ -9,6 +9,7 @@ import SendButton from "../Components/SendButton"
 function LoginPage({setToken}) {
 
   let navigate = useNavigate()
+  const [formError, setFormError] = useState(null)
 
   const [formData, setFormData] = useState({
     email: '',password: ''
@@ -28,20 +29,35 @@ function LoginPage({setToken}) {
 
   async function handleSubmit(e) {
     e.preventDefault()
-    try {
 
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email: formData.email,
-        password: formData.password,
-      })
-      
-      if (error) throw error
-      console.log(data)
-      setToken(data)
-      navigate('/homepage')
-  
-    } catch(error) {
-      alert(error)
+    let isFormEmpty = false
+    for(const field in formData) {
+      if (!formData[field]) {
+        isFormEmpty = true
+        break;
+      }
+    }
+    if (isFormEmpty) {
+      setFormError('Please fill in all fields')
+      setTimeout(() => {
+        setFormError(null)
+      }, 3000)
+    } else {
+      try {
+
+        const { data, error } = await supabase.auth.signInWithPassword({
+          email: formData.email,
+          password: formData.password,
+        })
+        
+        if (error) throw error
+        console.log(data)
+        setToken(data)
+        navigate('/homepage')
+    
+      } catch(error) {
+        alert(error)
+      }
     }
   
   }
@@ -49,6 +65,7 @@ function LoginPage({setToken}) {
   return (
     <div className="auth-form-container">
       <Form>
+        {formError && <p className="error">{formError}</p>}
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Email Address</Form.Label>
             <Form.Control className="input" type="email" name="email" size="lg" placeholder="name@example.com" onChange={handleChange} required/>

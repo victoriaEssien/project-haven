@@ -185,6 +185,12 @@ section {
     box-shadow: rgba(45, 31, 122, 0.15) 0px 48px 100px 0px;
 }
 
+.input {
+    margin-bottom: 5%;
+    font-size: 1rem;
+    resize: none;
+}
+
 .input:focus {
     box-shadow: none;
     border: 3px solid hsl(217, 66%, 80%)
