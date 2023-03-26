@@ -9,6 +9,8 @@ function SignUpPage() {
 
   let navigate = useNavigate()
 
+  const [formError, setFormError] = useState(null)
+
   const [formData, setFormData] = useState({
     fullName: '',email: '',password: ''
   })
@@ -28,24 +30,39 @@ function SignUpPage() {
 
  async function handleSubmit(e) {
   e.preventDefault()
-  try {
-    const { data, error } = await supabase.auth.signUp(
-      {
-        email: formData.email,
-        password: formData.password,
-        options: {
-          data: {
-            full_name: formData.fullName,
+  
+  let isFormEmpty = false
+  for(const field in formData) {
+    if (!formData[field]) {
+      isFormEmpty = true
+      break;
+    }
+  }
+  if (isFormEmpty) {
+    setFormError('Please fill in all fields')
+    setTimeout(() => {
+      setFormError(null)
+    }, 3000)
+  } else {
+    try {
+      const { data, error } = await supabase.auth.signUp(
+        {
+          email: formData.email,
+          password: formData.password,
+          options: {
+            data: {
+              full_name: formData.fullName,
+            }
           }
         }
-      }
-    )
-    if (error) throw error
-    alert('Check your email for verification link')
-    navigate('/login')
-
-  } catch(error) {
-    alert(error)
+      )
+      if (error) throw error
+      alert('Check your email for verification link')
+      navigate('/login')
+  
+    } catch(error) {
+      setFormError("Error signing up")
+    }
   }
 
 }
@@ -53,6 +70,7 @@ function SignUpPage() {
   return (
     <div className="auth-form-container">
       <Form>
+        {formError && <p className="error">{formError}</p>}
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Full Name</Form.Label>
             <Form.Control className="input" type="text" name="fullName" size="lg" placeholder="John Doe" onChange={handleChange} required/>
@@ -70,7 +88,7 @@ function SignUpPage() {
         <div className="d-grid">
             <SendButton onClick={handleSubmit} className="contact-btn">Create Account</SendButton>
           </div>
-        <p>Already have an account? <span><Link to="/login">Log in</Link></span></p>
+        <p className="helper-text">Already have an account? <Link to="/login" className="helper-link">Log in</Link></p>
       </Form>
     </div>
   )

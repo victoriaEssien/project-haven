@@ -197,6 +197,7 @@ section {
     border-radius: 6px;
     border: none;
     color: #fff;
+    margin-bottom: 5%;
 }
 
 /* Footer */
@@ -303,6 +304,21 @@ section {
     margin: 5% auto;
     width: 50%;
     box-shadow: rgba(45, 31, 122, 0.15) 0px 48px 100px 0px;
+}
+
+.error {
+    color: #cc0000;
+}
+
+.helper-text {
+    text-align: center;
+    color: #112b55;
+}
+
+.helper-link {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #6383bb;
 }
 
 /* Main Navigation bar */
