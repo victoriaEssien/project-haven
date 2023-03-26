@@ -415,6 +415,25 @@ section {
     color: #3e506f;
 }
 
+.search-div {
+    width: 70%;
+    margin: 5% auto;
+}
+
+.search-field {
+    font-size: 1rem;
+    width: 100%;
+}
+
+.search-field:focus {
+    box-shadow: none;
+    border: 3px solid hsl(217, 66%, 80%)
+}
+
+.search-body {
+    padding: 0;
+    margin: 5% 10%;
+}
 
 
 
@@ -562,9 +581,14 @@ section {
         margin-bottom: 1%;
     }
 
+    .dash-headings {
+        display: flex;
+        justify-content: space-between;
+        margin: 15% 0 5%;
+    }
+
     .recent {
         font-size: 1.4rem;
-        margin: 12% 2% 5%;
     }
 
     .topics-grid {
@@ -575,6 +599,12 @@ section {
 
     .topic-desc {
         font-size: 0.9rem;
+    }
+
+    .search-div {
+        padding: 20px;
+        width: 100vw;
+        margin: 5% auto;
     }
 
 

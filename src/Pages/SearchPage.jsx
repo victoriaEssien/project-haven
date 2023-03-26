@@ -38,8 +38,10 @@ function SearchPage() {
   return (
     <div>
         <AppNavBar onClick={handleLogOut}/>
-        <Form.Control type="text" className="input" value={query} onChange={handleChange} placeholder="Search..."/>
-        <section>
+        <div className="search-div">
+          <Form.Control type="text" size="lg" className="search-field" value={query} onChange={handleChange} placeholder="Search by topic name..."/>
+        </div>
+        <section className="search-body">
           {topics && (
             <div className="topics">
               <div className="topics-grid">

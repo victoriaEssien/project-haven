@@ -23,14 +23,30 @@ function ContributePage() {
       if (description.length > 0 && description.split(' ').length >= 50) {
         setWordCount(description.split(' ').length);
       }
-    }, [description]);
+
+      let timer
+      if(formError) {
+        timer = setTimeout(() => {
+          setFormError(null)
+        }, 3000)
+      }
+      return() => {
+        clearTimeout(timer)
+      }
+    }, [formError, description])
+
 
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        if(!title || !description || !category || !difficulty || wordCount < 50) {
+        if(!title || !description || !category || !difficulty) {
             setFormError("Please fill all fields correctly")
             return
+        }
+
+        if (wordCount < 50) {
+          setFormError("Project description is too short")
+          return
         }
 
         const { data, error } = await supabase
@@ -63,6 +79,7 @@ function ContributePage() {
         <AppNavBar onClick={handleLogOut}/>
         <div>
           <Form onSubmit={handleSubmit} className="auth-form-container">
+            {formError && <p className="error">{formError}</p>}
             <Form.Group className="mb-3">
                 <Form.Label>Project Title</Form.Label>
                 <Form.Control className="input" type="text" value={title} size="lg" placeholder="ex. Hospital Management System" onChange={(e) => setTitle(e.target.value)} required/>
@@ -91,8 +108,6 @@ function ContributePage() {
               <div className="d-grid">
                   <SendButton>Submit</SendButton>
                 </div>
-
-              {formError && <p className="error">{formError}</p>}
           </Form>
       </div>
     </div>
