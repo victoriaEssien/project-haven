@@ -14,9 +14,9 @@ function ContactSection() {
   const sendEmail = async (e) => {
     e.preventDefault();
 
-    if (document.getElementById("exampleForm.ControlInput1").value === "" ||
-    document.getElementById("exampleForm.ControlInput2").value === "" ||
-    document.getElementById("exampleForm.ControlTextarea1").value === "") {
+    if (document.getElementById("email-input").value === "" ||
+    document.getElementById("subject-input").value === "" ||
+    document.getElementById("message-input").value === "") {
   alert("Please fill in all fields before submitting")
 } else {
 
@@ -46,17 +46,17 @@ function ContactSection() {
           <Col md={6}>
             <div className="form-container">
               <Form ref={form}>
-                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                <Form.Group className="mb-3" controlId="email-input">
                   <Form.Label>Email Address</Form.Label>
                   <Form.Control className="input" type="email" name="email" size="lg" placeholder="name@example.com" required/>
                 </Form.Group>
                 
-                <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
+                <Form.Group className="mb-3" controlId="subject-input">
                   <Form.Label>Subject</Form.Label>
                   <Form.Control className="input" type="text" name="subject" size="lg" placeholder="Just saying hi" required/>
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                <Form.Group className="mb-3" controlId="message-input">
                   <Form.Label>Your Message</Form.Label>
                   <Form.Control className="input" as="textarea" name="message" rows={3} placeholder="I can't wait to use this!" required/>
                 </Form.Group>

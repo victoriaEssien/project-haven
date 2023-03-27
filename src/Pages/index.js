@@ -11,7 +11,8 @@ import SearchPage from "./SearchPage"
 import ContributePage from "./ContributePage"
 import DetailsPage from "./DetailsPage"
 import AllTopics from "./AllTopics"
+import ContactPage from "./ContactPage"
 
 export {
-    HeroSection, WelcomeSection, ReasonsSection, ContactSection, FooterSection, ComingSoon, SignUpPage, LoginPage, HomePage, SearchPage, ContributePage, DetailsPage, AllTopics
+    HeroSection, WelcomeSection, ReasonsSection, ContactSection, FooterSection, ComingSoon, SignUpPage, LoginPage, HomePage, SearchPage, ContributePage, DetailsPage, AllTopics, ContactPage
 }

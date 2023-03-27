@@ -1,7 +1,7 @@
 
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
 import { useEffect, useState } from "react"
-import { HeroSection, WelcomeSection, ReasonsSection, ContactSection, FooterSection, SignUpPage, LoginPage, HomePage, SearchPage, ContributePage, DetailsPage, AllTopics } from './index'
+import { HeroSection, WelcomeSection, ReasonsSection, ContactSection, FooterSection, SignUpPage, LoginPage, HomePage, SearchPage, ContributePage, DetailsPage, AllTopics, ContactPage } from './index'
 
 function LandingPage() {
 
@@ -40,6 +40,7 @@ function LandingPage() {
           <Route path="/contribute" element={<ContributePage />} />
           <Route path="/:id" element={<DetailsPage />} />
           <Route path="/all" element={<AllTopics />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </div>
     </Router>
