@@ -363,7 +363,7 @@ section {
     margin-bottom: 8%;
 }
 
-.dash-headings {
+.dash-headings, .icon-div {
     display: flex;
     justify-content: space-between;
 }
@@ -387,6 +387,10 @@ section {
     padding: 5% 10%;
     border-radius: 10px;
     box-shadow: rgba(45, 31, 122, 0.15) 0px 2px 40px 0px;
+}
+
+.icon {
+    font-size: 1.5rem;
 }
 
 .topic-category {
@@ -591,10 +595,20 @@ section {
         font-size: 1.4rem;
     }
 
+    .icon-div {
+        display: flex;
+        justify-content: space-between;
+        
+    }
+
     .topics-grid {
         display: grid;
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+
+    .icon {
+        font-size: 1.3rem;
     }
 
     .topic-desc {
