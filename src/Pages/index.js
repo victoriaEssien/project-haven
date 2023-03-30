@@ -8,11 +8,12 @@ import SignUpPage from "./SignUpPage"
 import LoginPage from "./LoginPage"
 import HomePage from "./HomePage"
 import SearchPage from "./SearchPage"
+import SavedTopicsPage from "./SavedTopicsPage"
 import ContributePage from "./ContributePage"
 import DetailsPage from "./DetailsPage"
 import AllTopics from "./AllTopics"
 import ContactPage from "./ContactPage"
 
 export {
-    HeroSection, WelcomeSection, ReasonsSection, ContactSection, FooterSection, ComingSoon, SignUpPage, LoginPage, HomePage, SearchPage, ContributePage, DetailsPage, AllTopics, ContactPage
+    HeroSection, WelcomeSection, ReasonsSection, ContactSection, FooterSection, ComingSoon, SignUpPage, LoginPage, HomePage, SearchPage, SavedTopicsPage, ContributePage, DetailsPage, AllTopics, ContactPage
 }

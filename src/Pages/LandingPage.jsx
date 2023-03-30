@@ -1,7 +1,7 @@
 
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
 import { useEffect, useState } from "react"
-import { HeroSection, WelcomeSection, ReasonsSection, ContactSection, FooterSection, SignUpPage, LoginPage, HomePage, SearchPage, ContributePage, DetailsPage, AllTopics, ContactPage } from './index'
+import { HeroSection, WelcomeSection, ReasonsSection, ContactSection, FooterSection, SignUpPage, LoginPage, HomePage, SearchPage, SavedTopicsPage, ContributePage, DetailsPage, AllTopics, ContactPage } from './index'
 
 function LandingPage() {
 
@@ -37,6 +37,7 @@ function LandingPage() {
           {/* <Route path="/coming" element={<ComingSoon />}></Route> */}
           {token?<Route path="/homepage" element={<HomePage token={token}/>} />:""}
           <Route path="/search" element={<SearchPage />} />
+          <Route path="/saved-topics" element={<SavedTopicsPage />} />
           <Route path="/contribute" element={<ContributePage />} />
           <Route path="/:id" element={<DetailsPage />} />
           <Route path="/all" element={<AllTopics />} />

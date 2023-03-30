@@ -9,10 +9,24 @@ function TopicCard({ topic }) {
   let color;
   const isMobileDevice = useMediaQuery({ query: '(max-width: 768px)' });
   const [isFilled, setIsFilled] = useState(true)
+  const [bookmarkedData, setBookmarkedData] = useState([]);
 
   const handleSaveTopic = (e) => {
     e.preventDefault()
     setIsFilled(!isFilled)
+    let bookmarkedDataCopy = [...bookmarkedData]
+
+    let isPresent = bookmarkedData.findIndex(
+      (item) => item.id === topic.id
+    )
+
+    if (isPresent === -1) {
+      bookmarkedDataCopy.push(topic)
+    } else {
+      bookmarkedDataCopy.splice(isPresent, 1)
+    }
+    setBookmarkedData(bookmarkedDataCopy)
+    localStorage.setItem("bookmarkedData", JSON.stringify(bookmarkedDataCopy))
   }
 
   switch (topic.category) {

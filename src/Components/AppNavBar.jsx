@@ -16,7 +16,7 @@ function AppNavBar({ onClick }) {
           <Nav className="ms-auto links">
             <Nav.Link as={Link} to="/homepage" className='nav-links'>Dashboard</Nav.Link>
             <Nav.Link as={Link} to="/search" className='nav-links'>Search</Nav.Link>
-            <Nav.Link href="#features" className='nav-links'>Saved</Nav.Link>
+            <Nav.Link href="/saved-topics" className='nav-links'>Saved</Nav.Link>
             <Nav.Link as={Link} to="/contribute" className='nav-links'>Contribute</Nav.Link>
             <Nav.Link href="/contact" className='nav-links'>Contact us</Nav.Link>
 
