@@ -78,7 +78,7 @@ function LoginPage({setToken}) {
         <div className="d-grid">
             <SendButton onClick={handleSubmit} className="contact-btn">Log in</SendButton>
           </div>
-        <p className="helper-text">Already have an account? <Link to="/register" className="helper-link">Register</Link></p>
+        <p className="helper-text">Don't have an account? <Link to="/register" className="helper-link">Register</Link></p>
       </Form>
     </div>
   )

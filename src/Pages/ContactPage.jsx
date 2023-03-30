@@ -1,8 +1,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import emailjs from 'emailjs-com';
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
+import Alert from "../Components/Alert";
 import Form from 'react-bootstrap/Form';
 import SendButton from "../Components/SendButton";
 import AppNavBar from "../Components/AppNavBar";
@@ -12,18 +11,20 @@ function ContactPage() {
 
   const form = useRef();
   const [formError, setFormError] = useState(null)
+  const [formSuccess, setFormSuccess] = useState(null)
 
   useEffect(() => {
     let timer
-    if(formError) {
+    if(formError || formSuccess) {
       timer = setTimeout(() => {
         setFormError(null)
+        setFormSuccess(null)
       }, 3000)
     }
     return() => {
       clearTimeout(timer)
     }
-  }, [formError])
+  }, [formError, formSuccess])
 
   const sendEmail = async (e) => {
     e.preventDefault();
@@ -37,7 +38,7 @@ function ContactPage() {
     await emailjs.sendForm('service_qk2039q', 'template_cwic9u4', form.current, 'Z9ZKs_j2kVSWTOYDg')
       .then((result) => {
         console.log(result.text);
-        alert("Message Sent, We will get back to you shortly")
+        setFormSuccess("Message Sent!, We will get back to you shortly")
         form.current.reset();
       }, (error) => {
         console.log(error.text);
@@ -57,6 +58,7 @@ function ContactPage() {
     <div>
         <AppNavBar onClick={handleLogOut}/>
         <div>
+          {formSuccess && <Alert message={formSuccess}/>}
           <Form ref={form} className="auth-form-container">
             {formError && <p className="error">{formError}</p>}
             <Form.Group className="mb-3" controlId="email-field">
