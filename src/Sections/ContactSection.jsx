@@ -1,6 +1,7 @@
 
-import { useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import emailjs from 'emailjs-com';
+import Alert from "../Components/Alert";
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Form from 'react-bootstrap/Form';
@@ -10,6 +11,21 @@ import SendButton from "../Components/SendButton";
 function ContactSection() {
 
   const form = useRef();
+  const [formError, setFormError] = useState(null)
+  const [formSuccess, setFormSuccess] = useState(null)
+
+  useEffect(() => {
+    let timer
+    if(formError || formSuccess) {
+      timer = setTimeout(() => {
+        setFormError(null)
+        setFormSuccess(null)
+      }, 3000)
+    }
+    return() => {
+      clearTimeout(timer)
+    }
+  }, [formError, formSuccess])
 
   const sendEmail = async (e) => {
     e.preventDefault();
@@ -17,13 +33,13 @@ function ContactSection() {
     if (document.getElementById("email-input").value === "" ||
     document.getElementById("subject-input").value === "" ||
     document.getElementById("message-input").value === "") {
-  alert("Please fill in all fields before submitting")
-} else {
+    setFormError("Please fill in all fields before submitting")
+    } else {
 
-  await emailjs.sendForm('service_qk2039q', 'template_cwic9u4', form.current, 'Z9ZKs_j2kVSWTOYDg')
+    await emailjs.sendForm('service_qk2039q', 'template_cwic9u4', form.current, 'Z9ZKs_j2kVSWTOYDg')
       .then((result) => {
         console.log(result.text);
-        alert("Message Sent, We will get back to you shortly")
+        setFormSuccess("Message Sent!, We will get back to you shortly")
         form.current.reset();
       }, (error) => {
         console.log(error.text);
@@ -31,7 +47,6 @@ function ContactSection() {
       });
 
 }
-
     
   };
 
@@ -44,8 +59,10 @@ function ContactSection() {
           </Col>
 
           <Col md={6}>
+            {formSuccess && <Alert message={formSuccess}/>}
             <div className="form-container">
               <Form ref={form}>
+                {formError && <p className="error">{formError}</p>}
                 <Form.Group className="mb-3" controlId="email-input">
                   <Form.Label>Email Address</Form.Label>
                   <Form.Control className="input" type="email" name="email" size="lg" placeholder="name@example.com" required/>

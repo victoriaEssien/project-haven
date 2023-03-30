@@ -77,8 +77,8 @@ function ContributePage() {
   return (
     <div>
         <AppNavBar onClick={handleLogOut}/>
-        <div>
-          <Form onSubmit={handleSubmit} className="auth-form-container">
+        <div className="auth-form-container">
+          <Form onSubmit={handleSubmit}>
             {formError && <p className="error">{formError}</p>}
             <Form.Group className="mb-3">
                 <Form.Label>Project Title</Form.Label>
