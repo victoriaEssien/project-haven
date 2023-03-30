@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBookmark, faXmark } from '@fortawesome/free-solid-svg-icons'
+import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 
 function TopicCard({ topic }) {
   let color;
@@ -60,7 +60,7 @@ function TopicCard({ topic }) {
       <div className="topic-card">
         <div className="icon-div">
           <p className="topic-category" style={{color: color}}>{topic.category}</p>
-          <FontAwesomeIcon className="icon" onClick={handleSaveTopic} icon={isFilled ? faBookmark : faXmark} />
+          <FontAwesomeIcon className="icon" onClick={handleSaveTopic} icon={faBookmark} />
         </div>
         <h4 className="topic-title">{truncatedTitle}</h4>
         <p className="topic-desc">{truncatedDescription}</p>
