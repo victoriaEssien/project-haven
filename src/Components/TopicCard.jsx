@@ -12,6 +12,7 @@ function TopicCard({ topic }) {
   const [bookmarkedData, setBookmarkedData] = useState([]);
   const existingData = JSON.parse(localStorage.getItem("bookmarkedData")) || [];
 
+
   useEffect(() => {
     if(existingData.findIndex(item => item.id === topic.id) !== -1){
       setIsFilled(true)
@@ -28,18 +29,13 @@ function TopicCard({ topic }) {
     let isPresent = bookmarkedData.findIndex(
       (item) => item.id === topic.id
     )
+    const existingData = JSON.parse(localStorage.getItem("bookmarkedData")) || [];
 
     if (isPresent === -1) {
       bookmarkedDataCopy.push(topic)
     }
     setBookmarkedData(bookmarkedDataCopy)
-
-    if (existingData.findIndex(item => item.id === topic.id) !== -1) {
-      setIsFilled(true)
-    } else {
-      setIsFilled(false)
-      localStorage.setItem("bookmarkedData", JSON.stringify([...existingData, ...bookmarkedDataCopy]))
-    }
+    localStorage.setItem("bookmarkedData", JSON.stringify([...existingData, ...bookmarkedDataCopy]))
   }
 
   const handleDeleteTopic = (e) => {
