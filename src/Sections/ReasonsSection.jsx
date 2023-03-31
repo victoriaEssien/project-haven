@@ -13,7 +13,7 @@ function ReasonsSection() {
         <Row className="reasons-row">
             <Col className="reasons-col">
                 <h3 className="reasons-subheading">Search our database for ideas</h3>
-                <p className="reasons-text">Rather than searching multiple sources on the internet. Search in a single place simply by searching for topic name, category and/or level of difficulty, browse through the results and choose the topic that you can handle best🙃</p>
+                <p className="reasons-text">Rather than searching multiple sources on the internet. Search in a single place by entering the topic name or filtering through the categories, browse through the results and choose the topic that you can handle best🙃</p>
             </Col>
 
             <Col md={6}>

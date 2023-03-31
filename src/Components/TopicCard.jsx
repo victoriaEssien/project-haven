@@ -81,7 +81,7 @@ function TopicCard({ topic }) {
 
   let truncatedTitle = isMobileDevice ? topic.title.slice(0, 20).concat("...") : topic.title;
 
-  const truncatedDescription = topic.description.slice(0, 110).concat("...");
+  const truncatedDescription = topic.description.slice(0, 120).concat("...");
 
   return (
     <Link className="div-link" to={'/' + topic.id}>
