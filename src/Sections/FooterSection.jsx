@@ -2,6 +2,7 @@
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Nav from 'react-bootstrap/Nav';
+import { Link } from "react-router-dom";
 
 function FooterSection() {
   return (
@@ -21,13 +22,15 @@ function FooterSection() {
 
             <Col sm={4}>
                 <h4 className="footer-subheader">Follow us</h4>
-                <Nav.Link className="footer-link">Instagram</Nav.Link>
+                <Nav.Link as={Link} to="https://www.instagram.com/projecthaven_/" className="footer-link">Instagram</Nav.Link>
                 <Nav.Link className="footer-link">Twitter</Nav.Link>
                 <Nav.Link className="footer-link">LinkedIn</Nav.Link>
                 <Nav.Link className="footer-link">Facebook</Nav.Link>
             </Col>
-            
         </Row>
+        <div className="owner-div">
+            <p>Designed and Developed by <Link to="https://twitter.com/code_breaker19" className="helper-link">Victoria Essien</Link></p>
+        </div>
     </footer>
   )
 }

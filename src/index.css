@@ -13,6 +13,12 @@ body {
     color: #41be80;
 }
 
+.owner-div {
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 6%;
+}
+
 .nav-links {
     margin:0 10px;
     color: #0d2040;
@@ -444,6 +450,10 @@ section {
 /* Responsive */
 
 @media (min-width: 320px) and (max-width: 480px) {
+
+    .owner-div {
+        margin-top: 10%;
+    }
 
     /* Navigation and Hero Section */
 
