@@ -10,16 +10,15 @@ function TopicCard({ topic }) {
   const isMobileDevice = useMediaQuery({ query: '(max-width: 768px)' });
   const [isFilled, setIsFilled] = useState(true)
   const [bookmarkedData, setBookmarkedData] = useState([]);
-  const existingData = JSON.parse(localStorage.getItem("bookmarkedData")) || [];
-
+  const presentData = JSON.parse(localStorage.getItem("bookmarkedData")) || [];
 
   useEffect(() => {
-    if(existingData.findIndex(item => item.id === topic.id) !== -1){
+    if (presentData.findIndex(item => item.id === topic.id) !== -1) {
       setIsFilled(true)
     }else {
       setIsFilled(false)
     }
-  }, [existingData])
+  }, [presentData])
 
   const handleSaveTopic = (e) => {
     e.preventDefault()
@@ -51,10 +50,13 @@ function TopicCard({ topic }) {
       bookmarkedDataCopy.splice(isPresent, 1)
     }
     setBookmarkedData(bookmarkedDataCopy)
-    const existingDataCopy = JSON.parse(localStorage.getItem("bookmarkedData")) || []
+
+    const existingDataCopy = JSON.parse(localStorage.getItem("bookmarkedData")) || [];
+
     const index = existingDataCopy.findIndex(item => item.id === topic.id);
     existingDataCopy.splice(index, 1)
-    localStorage.setItem("bookmarkedData", JSON.stringify([...existingDataCopy]))
+
+    localStorage.setItem("bookmarkedData", JSON.stringify([...existingDataCopy, ...bookmarkedDataCopy]))
   }
 
   switch (topic.category) {
@@ -80,7 +82,6 @@ function TopicCard({ topic }) {
   }
 
   let truncatedTitle = isMobileDevice ? topic.title.slice(0, 20).concat("...") : topic.title;
-
   const truncatedDescription = topic.description.slice(0, 120).concat("...");
 
   return (

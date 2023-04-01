@@ -13,7 +13,7 @@ function SavedTopicsPage() {
     if (bookmarkedDataFromStorage) {
       setBookmarkedData(JSON.parse(bookmarkedDataFromStorage));
     }
-  }, [bookmarkedData]);
+  }, []);
 
   function handleLogOut() {
     sessionStorage.removeItem('token')
