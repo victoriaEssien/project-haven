@@ -1,7 +1,7 @@
 
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
 import { useEffect, useState } from "react"
-import { HeroSection, WelcomeSection, ReasonsSection, ContactSection, FooterSection, SignUpPage, LoginPage, HomePage, SearchPage, SavedTopicsPage, ContributePage, DetailsPage, AllTopics, ContactPage } from './index'
+import { HeroSection, WelcomeSection, ReasonsSection, ContactSection, FooterSection, SignUpPage, LoginPage, HomePage, SearchPage, SavedTopicsPage, ContributePage, DetailsPage, AllTopics, ContactPage, EmailVerification } from './index'
 
 function LandingPage() {
 
@@ -42,6 +42,7 @@ function LandingPage() {
           <Route path="/:id" element={<DetailsPage />} />
           <Route path="/all" element={<AllTopics />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/verify-email" element={<EmailVerification />} />
         </Routes>
       </div>
     </Router>

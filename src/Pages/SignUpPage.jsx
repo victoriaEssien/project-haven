@@ -57,8 +57,7 @@ function SignUpPage() {
         }
       )
       if (error) throw error
-      alert('Check your email for verification link')
-      navigate('/login')
+      navigate('/verify-email')
   
     } catch(error) {
       setFormError("Error signing up")

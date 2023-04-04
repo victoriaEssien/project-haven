@@ -13,7 +13,8 @@ import ContributePage from "./ContributePage"
 import DetailsPage from "./DetailsPage"
 import AllTopics from "./AllTopics"
 import ContactPage from "./ContactPage"
+import EmailVerification from "./EmailVerification"
 
 export {
-    HeroSection, WelcomeSection, ReasonsSection, ContactSection, FooterSection, ComingSoon, SignUpPage, LoginPage, HomePage, SearchPage, SavedTopicsPage, ContributePage, DetailsPage, AllTopics, ContactPage
+    HeroSection, WelcomeSection, ReasonsSection, ContactSection, FooterSection, ComingSoon, SignUpPage, LoginPage, HomePage, SearchPage, SavedTopicsPage, ContributePage, DetailsPage, AllTopics, ContactPage, EmailVerification
 }
