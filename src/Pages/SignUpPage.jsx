@@ -57,7 +57,7 @@ function SignUpPage() {
         }
       )
       if (error) throw error
-      navigate('/verify-email')
+      navigate('/verify', {replace: true})
   
     } catch(error) {
       setFormError("Error signing up")

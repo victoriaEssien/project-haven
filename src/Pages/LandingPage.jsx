@@ -34,15 +34,14 @@ function LandingPage() {
           </Route>
           <Route path="/register" element={<SignUpPage />} />
           <Route path="/login" element={<LoginPage setToken={setToken}/>} />
-          {/* <Route path="/coming" element={<ComingSoon />}></Route> */}
           {token?<Route path="/homepage" element={<HomePage token={token}/>} />:""}
           <Route path="/search" element={<SearchPage />} />
-          <Route path="/saved-topics" element={<SavedTopicsPage />} />
+          <Route path="/saved" element={<SavedTopicsPage />} />
           <Route path="/contribute" element={<ContributePage />} />
           <Route path="/:id" element={<DetailsPage />} />
           <Route path="/all" element={<AllTopics />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/verify-email" element={<EmailVerification />} />
+          <Route path="/verify" element={<EmailVerification />} />
         </Routes>
       </div>
     </Router>
