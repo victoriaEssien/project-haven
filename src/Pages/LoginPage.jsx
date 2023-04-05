@@ -1,7 +1,7 @@
 
 import supabase from "../client"
 import { Link, useNavigate } from "react-router-dom"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Form from "react-bootstrap/Form"
 import SendButton from "../Components/SendButton"
 
@@ -9,12 +9,23 @@ function LoginPage({setToken}) {
 
   let navigate = useNavigate()
   const [formError, setFormError] = useState(null)
+  const [authError, setAuthError] = useState(null)
 
   const [formData, setFormData] = useState({
     email: '',password: ''
   })
 
-  console.log(formData)
+  useEffect(() => {
+    let timer
+    if(authError) {
+      timer = setTimeout(() => {
+        setAuthError(null)
+      }, 3000)
+    }
+    return() => {
+      clearTimeout(timer)
+    }
+  }, [authError])
 
   function handleChange(event){
     setFormData((prevFormData)=>{
@@ -55,7 +66,7 @@ function LoginPage({setToken}) {
         navigate('/homepage')
     
       } catch(error) {
-        alert(error)
+        setAuthError("Invalid login details")
       }
     }
   
@@ -63,6 +74,7 @@ function LoginPage({setToken}) {
 
   return (
     <div className="auth-form-container">
+      {authError && <p className="error">{authError}</p>}
       <Form>
         {formError && <p className="error">{formError}</p>}
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
