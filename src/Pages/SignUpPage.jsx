@@ -6,7 +6,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import SendButton from "../Components/SendButton"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 function SignUpPage() {
 
@@ -19,6 +19,18 @@ function SignUpPage() {
   })
 
   const [passwordVisible, setPasswordVisible] = useState(false)
+
+  useEffect(() => {
+    let timer
+    if(formError) {
+      timer = setTimeout(() => {
+        setFormError(null)
+      }, 3000)
+    }
+    return() => {
+      clearTimeout(timer)
+    }
+  }, [formError])
 
   function handleChange(event){
     setFormData((prevFormData)=>{
@@ -43,9 +55,6 @@ function SignUpPage() {
   }
   if (isFormEmpty) {
     setFormError('Please fill in all fields')
-    setTimeout(() => {
-      setFormError(null)
-    }, 3000)
   } else {
     try {
       const { data, error } = await supabase.auth.signUp(
@@ -63,7 +72,7 @@ function SignUpPage() {
       navigate('/verify', {replace: true})
   
     } catch(error) {
-      setFormError("Error signing up")
+      setFormError("Password is too short")
     }
   }
 
@@ -87,7 +96,7 @@ function handlePasswordVisibility() {
             <Form.Control className="input" type="email" name="email" size="lg" placeholder="name@example.com" onChange={handleChange} required/>
         </Form.Group>
 
-        <Form.Label htmlFor="pass">Password</Form.Label>
+        <Form.Label htmlFor="pass">Password (at least 6 characters)</Form.Label>
         <InputGroup className="mb-3" size="lg">
             <Form.Control id="pass" className="pass-input" type={passwordVisible ? "text" : "password"} name="password" size="lg" onChange={handleChange} required/>
             <InputGroup.Text>
