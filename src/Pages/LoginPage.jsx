@@ -3,6 +3,9 @@ import supabase from "../client"
 import { Link, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 import Form from "react-bootstrap/Form"
+import InputGroup from 'react-bootstrap/InputGroup';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import SendButton from "../Components/SendButton"
 
 function LoginPage({setToken}) {
@@ -14,6 +17,8 @@ function LoginPage({setToken}) {
   const [formData, setFormData] = useState({
     email: '',password: ''
   })
+
+  const [passwordVisible, setPasswordVisible] = useState(false)
 
   useEffect(() => {
     let timer
@@ -72,6 +77,10 @@ function LoginPage({setToken}) {
   
   }
 
+  function handlePasswordVisibility() {
+    setPasswordVisible(!passwordVisible)
+  }
+
   return (
     <div className="auth-form-container">
       {authError && <p className="error">{authError}</p>}
@@ -82,12 +91,16 @@ function LoginPage({setToken}) {
             <Form.Control className="input" type="email" name="email" size="lg" placeholder="name@example.com" onChange={handleChange} required/>
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
-            <Form.Label>Password</Form.Label>
-            <Form.Control className="input" type="password" name="password" size="lg" onChange={handleChange} required/>
-        </Form.Group>
+      <Form.Label htmlFor="pass">Password</Form.Label>
+        <InputGroup className="mb-3" size="lg">
+            <Form.Control id="pass" className="pass-input" type={passwordVisible ? "text" : "password"} name="password" size="lg" onChange={handleChange} required/>
+            <InputGroup.Text>
+              <FontAwesomeIcon className="password-icon" onClick={handlePasswordVisibility} icon={passwordVisible ? faEyeSlash : faEye} />
+        </InputGroup.Text>
+        </InputGroup>
+        
         <div className="d-grid">
-            <SendButton onClick={handleSubmit} className="contact-btn">Log in</SendButton>
+            <SendButton onClick={handleSubmit}>Log in</SendButton>
           </div>
         <p className="helper-text">Don't have an account? <Link to="/register" className="helper-link">Register</Link></p>
       </Form>

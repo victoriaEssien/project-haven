@@ -197,7 +197,13 @@ section {
     resize: none;
 }
 
-.input:focus {
+.pass-input {
+    margin-bottom: 0;
+    font-size: 1rem;
+    resize: none;
+}
+
+.input:focus, .pass-input:focus {
     box-shadow: none;
     border: 3px solid hsl(217, 66%, 80%)
 }
@@ -209,7 +215,7 @@ section {
     border-radius: 6px;
     border: none;
     color: #fff;
-    margin-bottom: 5%;
+    margin: 3% 0;
 }
 
 /* Footer */
@@ -341,12 +347,35 @@ section {
     box-shadow: rgba(45, 31, 122, 0.15) 0px 2px 40px 0px;
 }
 
+/* Email verification */
+
+.email-div {
+    border: none;
+    text-align: center;
+    border-radius: 10px;
+    padding: 40px 40px 60px;
+    margin: 5% auto 0;
+    width: 50%;
+    box-shadow: rgba(45, 31, 122, 0.15) 0px 48px 100px 0px;
+}
+
+.email-pic {
+    width: 40%;
+}
+
+.email-subheader {
+    font-size: 1rem;
+    margin: 2% auto 0;
+    width: 65%;
+    line-height: 1.6;
+    color: #3e506f;
+}
+
+.email-stress {
+    font-weight: 600;
+}
 
 /* Dashboard */
-
-/* .dash-body-whole {
-    
-} */
 
 .dashboard {
     margin: 3% 6%;
@@ -631,5 +660,27 @@ section {
         margin: 5% auto;
     }
 
+    .select {
+        margin-bottom: 10%;
+    }
+
+    .email-div {
+        border: none;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 5% auto;
+        width: 100vw;
+        height: 100vh;
+        box-shadow: rgba(45, 31, 122, 0.15) 0px 48px 100px 0px;
+    }
+
+    .email-pic {
+        width: 50%;
+    }
+
+    .email-subheader {
+        width: 80%;
+        line-height: 1.6;
+    }
 
   }

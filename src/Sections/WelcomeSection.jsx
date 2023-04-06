@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Button from "react-bootstrap/Button"
-import WelcomeImg from "../assets/welcome-img.png"
+import HomeScreen from "../assets/homescreen.webp"
 
 function WelcomeSection() {
   return (
@@ -21,7 +21,7 @@ function WelcomeSection() {
             </Col>
 
             <Col md={6}>
-                    <img src={WelcomeImg} alt="The project haven dashboard screen" className="welcome-img"/>
+                    <img src={HomeScreen} alt="The project haven dashboard screen" className="welcome-img"/>
             </Col>
         </Row>
     </section>

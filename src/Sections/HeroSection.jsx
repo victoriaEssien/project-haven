@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Button from 'react-bootstrap/Button'
-import HeroImg from '.././assets/hero-img.png'
+import HeroImg from '.././assets/hero-img.webp'
 
 function HeroSection() {
   return (
@@ -15,7 +15,7 @@ function HeroSection() {
             <Row>
                 <Col>
                     <h1 className="hero-header">Hundreds of <span className="blue">project topics</span> at <span className="green">your fingertips!</span></h1>
-                    <p className="hero-subheading">We made it easier to find project topics by creating a single library that contains all of those subjects.</p>
+                    <p className="hero-subheading">We make it easier to find project topics by creating a single library that contains all of them.</p>
                     <div className="btn-container">
                         <Link to="/register" className='navigation-link'>
                         <Button className="primary-btn">Get Started</Button>

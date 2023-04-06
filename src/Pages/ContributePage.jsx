@@ -14,7 +14,6 @@ function ContributePage() {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [category, setCategory] = useState("");
-    const [difficulty, setDifficulty] = useState("");
     const [formError, setFormError] = useState(null)
     const [wordCount, setWordCount] = useState(0);
 
@@ -39,19 +38,19 @@ function ContributePage() {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        if(!title || !description || !category || !difficulty) {
+        if(!title || !description || !category) {
             setFormError("Please fill all fields correctly")
             return
         }
 
-        if (wordCount < 50) {
+        if (wordCount < 30) {
           setFormError("Project description is too short")
           return
         }
 
         const { data, error } = await supabase
             .from("contributions")
-            .insert([{title, description, category, difficulty}])
+            .insert([{title, description, category}])
             .select()
             setTitle("")
             setDescription("")
@@ -99,12 +98,6 @@ function ContributePage() {
                 <option value="Networking">Networking</option>
               </Form.Select>
 
-              <Form.Select size="lg" name="difficulty" className="input" id="difficulty" onChange={(e) => setDifficulty(e.target.value)} required>
-              <option value="">Select difficulty level</option>
-                <option value="Easy">Easy</option>
-                <option value="Hard">Hard</option>
-                <option value="Difficult">Difficult</option>
-              </Form.Select>
               <div className="d-grid">
                   <SendButton>Submit</SendButton>
                 </div>

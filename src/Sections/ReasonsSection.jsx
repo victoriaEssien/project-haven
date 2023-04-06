@@ -1,10 +1,10 @@
 
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-import reasonImgOne from "../assets/reasons-img-one.png"
-import reasonImgTwo from "../assets/reasons-img-two.png"
-import reasonImgThree from "../assets/reasons-img-three.png"
-import reasonImgFour from "../assets/reasons-img-four.png"
+import SearchScreen from "../assets/search-screen.webp"
+import SavedScreen from "../assets/saved-screen.webp"
+import ContributeScreen from "../assets/contribute-screen.webp"
+import ContactScreen from "../assets/contact-screen.webp"
 
 function ReasonsSection() {
   return (
@@ -17,7 +17,7 @@ function ReasonsSection() {
             </Col>
 
             <Col md={6}>
-                <img src={reasonImgOne} alt="The search page of project haven's dashboard" className="welcome-img"/>
+                <img src={SearchScreen} alt="The search page of project haven's dashboard" className="welcome-img"/>
             </Col>
         </Row>
 
@@ -28,7 +28,7 @@ function ReasonsSection() {
             </Col>
 
             <Col md={6}>
-            <img src={reasonImgTwo} alt="The saved topics page of the project haven dashboard" className="welcome-img"/>
+            <img src={SavedScreen} alt="The saved topics page of the project haven dashboard" className="welcome-img"/>
             </Col>
         </Row>
 
@@ -39,7 +39,7 @@ function ReasonsSection() {
             </Col>
 
             <Col md={6}>
-                <img src={reasonImgThree} alt="" className="welcome-img"/>
+                <img src={ContributeScreen} alt="" className="welcome-img"/>
             </Col>
         </Row>
 
@@ -52,7 +52,7 @@ function ReasonsSection() {
             </Col>
 
             <Col md={6}>
-            <img src={reasonImgFour} alt="" className="welcome-img"/>
+            <img src={ContactScreen} alt="" className="welcome-img"/>
             </Col>
         </Row>
 
