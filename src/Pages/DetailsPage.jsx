@@ -1,5 +1,5 @@
 
-import React from "react";
+import React from "react"
 import supabase from "../client"
 import { useParams, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
@@ -17,26 +17,26 @@ function DetailsPage() {
                .from('topics')
                .select()
                .eq('id', id)
-               .single();
+               .single()
 
             if (error) {
-                navigate('/homepage', {replace: true});
+                navigate('/homepage', {replace: true})
             }
 
             if (data) {
-                setTitle(data.title);
-                setDescription(data.description);
+                setTitle(data.title)
+                setDescription(data.description)
             }
-        };
+        }
 
-        fetchTopic();
-    }, [id, navigate]);
+        fetchTopic()
+    }, [id, navigate])
 
     const paragraphs = description ? description.split("\n").map((line, index) => (
         <React.Fragment key={index}>
             <p>{line}</p>
         </React.Fragment>
-    )) : null;
+    )) : null
 
     return (
         <div className="details-div">
