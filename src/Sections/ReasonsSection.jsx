@@ -39,7 +39,7 @@ function ReasonsSection() {
             </Col>
 
             <Col md={6}>
-                <img src={ContributeScreen} alt="" className="welcome-img"/>
+                <img src={ContributeScreen} alt="The contribution page of the project haven dashboard" className="welcome-img"/>
             </Col>
         </Row>
 
@@ -52,7 +52,7 @@ function ReasonsSection() {
             </Col>
 
             <Col md={6}>
-            <img src={ContactScreen} alt="" className="welcome-img"/>
+            <img src={ContactScreen} alt="The contact us form page of the project haven dashboard" className="welcome-img"/>
             </Col>
         </Row>
 

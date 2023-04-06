@@ -474,7 +474,22 @@ section {
     margin: 5% 10%;
 }
 
+.details-div {
+    margin: 5%;
+}
 
+.details-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #0d2040;
+}
+
+.details-description {
+    margin-top: 2%;
+    line-height: 1.6;
+    width: 90%;
+    color: #3e506f;
+}
 
 /* Responsive */
 

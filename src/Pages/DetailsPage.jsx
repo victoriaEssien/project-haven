@@ -35,9 +35,9 @@ function DetailsPage() {
     }, [id, navigate])
 
   return (
-    <div>
-        <h4>{title}</h4>
-        <p>{description}</p>
+    <div className="details-div">
+        <h1 className="details-title">{title}</h1>
+        <p className="details-description">{description}</p>
     </div>
   )
 }

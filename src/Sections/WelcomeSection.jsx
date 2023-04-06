@@ -21,7 +21,7 @@ function WelcomeSection() {
             </Col>
 
             <Col md={6}>
-                    <img src={HomeScreen} alt="The project haven dashboard screen" className="welcome-img"/>
+              <img src={HomeScreen} alt="The project haven dashboard screen" className="welcome-img"/>
             </Col>
         </Row>
     </section>
