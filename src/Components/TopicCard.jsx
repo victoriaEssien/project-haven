@@ -7,6 +7,8 @@ import { faBookmark, faXmark } from '@fortawesome/free-solid-svg-icons'
 
 function TopicCard({ topic }) {
   let color;
+  let bgColor;
+  let textColor;
   const isMobileDevice = useMediaQuery({ query: '(max-width: 768px)' });
   const [isFilled, setIsFilled] = useState(true)
   const [bookmarkedData, setBookmarkedData] = useState([]);
@@ -77,8 +79,23 @@ function TopicCard({ topic }) {
       break;
     case 'Cyber Security':
       color = "#8A0DBF";
+      break;
     default:
       color = 'black';
+  }
+
+  switch (topic.status) {
+    case 'Approved':
+      bgColor = "#87DEB3";
+      textColor = "#1C6440";
+      break;
+    case 'Pending':
+      bgColor = "#FDD768";
+      textColor = "#7E5E02";
+      break;
+    default:
+      bgColor = "#3e506f";
+      textColor = "#fff";
   }
 
   let truncatedTitle = isMobileDevice ? topic.title.slice(0, 20).concat("...") : topic.title;
@@ -93,6 +110,7 @@ function TopicCard({ topic }) {
         </div>
         <h4 className="topic-title">{truncatedTitle}</h4>
         <p className="topic-desc">{truncatedDescription}</p>
+        <p className="status" style={{backgroundColor: bgColor, color: textColor}}>{topic.status}</p>
       </div>
     </Link>
   )

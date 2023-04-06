@@ -19,7 +19,7 @@ function ContributePage() {
 
     
     useEffect(() => {
-      if (description.length > 0 && description.split(' ').length >= 50) {
+      if (description.length > 0 && description.split(' ').length >= 20) {
         setWordCount(description.split(' ').length);
       }
 
@@ -49,8 +49,8 @@ function ContributePage() {
         }
 
         const { data, error } = await supabase
-            .from("contributions")
-            .insert([{title, description, category}])
+            .from("topics")
+            .insert([{title, description, category, status: "Pending"}])
             .select()
             setTitle("")
             setDescription("")

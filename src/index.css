@@ -445,6 +445,18 @@ section {
     color: #3e506f;
 }
 
+.status {
+    font-size: 0.8rem;
+    padding: 4px 15px;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-top: 4%;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+}
+
 .div-link {
     text-decoration: none;
     color: #0d2040;
