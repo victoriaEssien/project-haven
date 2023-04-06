@@ -51,7 +51,7 @@ function HomePage({ token }) {
         <div className="topics-container">
           <div className="dash-headings">
             <h3 className='recent'>Recently Added</h3>
-            <Link className='div-link' to={'/all'}>See all topics</Link>
+            <Link className='div-link' to={'/all'}>See all</Link>
           </div>
         </div>
           {fetchError && (<p>{fetchError}</p>)}

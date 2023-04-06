@@ -43,7 +43,7 @@ function ContributePage() {
             return
         }
 
-        if (wordCount < 30) {
+        if (wordCount < 20) {
           setFormError("Project description is too short")
           return
         }
@@ -85,8 +85,8 @@ function ContributePage() {
             </Form.Group>
 
             <Form.Group className="mb-3">
-                <Form.Label>Project Description</Form.Label>
-                <Form.Control className="input" as="textarea" rows={3} type="text" value={description} size="lg" placeholder="A hospital management system to manage clinic records" onChange={(e) => setDescription(e.target.value)} required/>
+                <Form.Label>Project Description (minimum 20 words)</Form.Label>
+                <Form.Control className="input" as="textarea" rows={3} type="text" value={description} size="lg" placeholder="Tell us what your project is about and what it does" onChange={(e) => setDescription(e.target.value)} required/>
             </Form.Group>
 
               <Form.Select size="lg" name="category" className="input" id="Category" onChange={(e) => setCategory(e.target.value)} required>
