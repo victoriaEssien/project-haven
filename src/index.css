@@ -499,7 +499,7 @@ section {
 .details-description {
     margin-top: 2%;
     line-height: 1.6;
-    width: 90%;
+    width: 100%;
     color: #3e506f;
 }
 
@@ -689,6 +689,19 @@ section {
 
     .select {
         margin-bottom: 10%;
+    }
+
+    .details-div {
+        margin-top: 10%;
+    }
+
+    .details-title {
+        font-size: 2rem;
+    }
+
+    .details-description {
+        margin-top: 8%;
+        width: 100%;
     }
 
     .email-div {

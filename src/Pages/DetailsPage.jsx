@@ -1,17 +1,15 @@
 
-
+import React from "react";
 import supabase from "../client"
 import { useParams, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 
-
 function DetailsPage() {
-    
-    const { id } = useParams()
-    let navigate = useNavigate()
+    const { id } = useParams();
+    let navigate = useNavigate();
 
-    const [title, setTitle] = useState()
-    const [description, setDescription] = useState()
+    const [title, setTitle] = useState();
+    const [description, setDescription] = useState();
 
     useEffect(() => {
         const fetchTopic = async () => {
@@ -19,27 +17,33 @@ function DetailsPage() {
                .from('topics')
                .select()
                .eq('id', id)
-               .single()
-               
+               .single();
+
             if (error) {
-                navigate('/homepage', {replace: true})
+                navigate('/homepage', {replace: true});
             }
 
             if (data) {
-                setTitle(data.title)
-                setDescription(data.description)
+                setTitle(data.title);
+                setDescription(data.description);
             }
-        }
+        };
 
-        fetchTopic()
-    }, [id, navigate])
+        fetchTopic();
+    }, [id, navigate]);
 
-  return (
-    <div className="details-div">
-        <h1 className="details-title">{title}</h1>
-        <p className="details-description">{description}</p>
-    </div>
-  )
+    const paragraphs = description ? description.split("\n").map((line, index) => (
+        <React.Fragment key={index}>
+            <p>{line}</p>
+        </React.Fragment>
+    )) : null;
+
+    return (
+        <div className="details-div">
+            <h1 className="details-title">{title}</h1>
+            <div className="details-description">{paragraphs}</div>
+        </div>
+    );
 }
 
 export default DetailsPage
